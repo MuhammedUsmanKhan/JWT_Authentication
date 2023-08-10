@@ -36,7 +36,11 @@ darkMode.addEventListener(`click`, () => {
             input.classList.toggle('bg-[#0f172a]')
         })
         labels.forEach((label) => {
-            label.classList.toggle('bg-[#0f172a]')
+            //if (!label.classList.contains('bg-white')) {
+                // label.classList.remove('bg-white')
+                label.classList.toggle('bg-[#0f172a]')
+                label.classList.toggle('bg-white')
+            //}
         })
         footer.classList.toggle('text-white')
     }
@@ -54,7 +58,11 @@ lightMode.addEventListener(`click`, () => {
             input.classList.toggle('bg-[#0f172a]')
         })
         labels.forEach((label) => {
-            label.classList.toggle('bg-[#0f172a]')
+            //if (label.classList.contains('bg-white')) {
+                // label.classList.add('bg-white')
+                label.classList.toggle('bg-white')
+                label.classList.toggle('bg-[#0f172a]')
+            //}
         })
         footer.classList.toggle('text-white')
     }
