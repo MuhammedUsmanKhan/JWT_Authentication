@@ -40,26 +40,26 @@
                 </div>
                 <form action="" class="space-y-2" id="submitForm">
                     <div class="relative flex flex-col items-center">
-                        <input type="text" required
+                        <input id="firstName" type="text" required
                             class="w-11/12 p-2 transition-colors peer border-black outline-none border-2 duration-500">
                         <label for=""
                             class="absolute peer-valid:text-xs peer-valid:transform peer-valid:-translate-y-6 peer-valid:pl-1 peer-valid:pr-1 peer-focus:text-xs peer-focus:transform peer-focus:-translate-y-6 peer-focus:pl-1 peer-focus:pr-1 bottom-3 left-6 md:left-8 lg:left-9 font-semibold bg-white duration-500 transition-all">First Name</label>
                     </div>
                     <div class="relative flex flex-col items-center">
-                        <input type="text" required
+                        <input id="lastName" type="text" required
                             class="w-11/12 p-2 transition-colors peer border-black outline-none border-2 duration-500">
-                        <label for=""
+                        <label for="lastName"
                             class="absolute peer-valid:text-xs peer-valid:transform peer-valid:-translate-y-6 peer-valid:pl-1 peer-valid:pr-1 peer-focus:text-xs peer-focus:transform peer-focus:-translate-y-6 peer-focus:pl-1 peer-focus:pr-1  bottom-3 left-6 md:left-8 lg:left-9 font-semibold bg-white duration-500 transition-all">Last Name</label>
                     </div>
                     <div class="relative flex flex-col items-center">
-                        <input type="email" required
+                        <input id="userEmail" type="email" required
                             class="w-11/12 p-2 transition-colors peer border-black outline-none border-2 duration-500">
                         <label for=""
                             class="absolute peer-valid:text-xs peer-valid:transform peer-valid:-translate-y-6 peer-valid:pl-1 peer-valid:pr-1 peer-focus:text-xs peer-focus:transform peer-focus:-translate-y-6 peer-focus:pl-1 peer-focus:pr-1  bottom-3 left-6 md:left-8 lg:left-9  font-semibold bg-white duration-500 transition-all">Email</label>
                             <i class="absolute right-10 peer-focus:hidden top-5 fa-lg fa-regular fa-envelope"></i>
                     </div>
                     <div class="relative flex flex-col items-center">
-                        <input id="signupPass" type="password" required
+                        <input id="userPassword" type="password" required
                             class="w-11/12 p-2 transition-colors peer outline-none border-2 border-black duration-500">
                         <label for=""
                             class="absolute peer-valid:text-xs peer-valid:transform peer-valid:-translate-y-6 peer-valid:pl-1 peer-valid:pr-1 peer-focus:text-xs peer-focus:transform peer-focus:-translate-y-6 peer-focus:pl-1 peer-focus:pr-1  bottom-3 left-6 md:left-8 lg:left-9  font-semibold bg-white duration-500 transition-all">Password</label>
@@ -79,6 +79,7 @@
         </div>
     </main>
     <footer class="sm:p-1 border-t-2 border-black font-semibold text-center">Copyright &copy MSTECH</footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/5a0b948d4f.js" crossorigin="anonymous"></script>
     <script type="module" src="index.mjs"></script>
 </body>

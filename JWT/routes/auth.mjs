@@ -1,5 +1,5 @@
 // import { Collection } from 'mongodb'
-import { client } from '../mongodb.mjs'
+import { client } from '../../mongodb.mjs'
 import { stringToHash, varifyHash } from "bcrypt-inzi"
 import jwt from 'jsonwebtoken'
 import 'dotenv/config'
@@ -12,9 +12,9 @@ let router = express.Router()
 
 
 //////////////// Checking User in mongoDb database (Sign In) ///////////////
-router.get('/signin', async (req, res, next) => {
+router.post('/signin', async (req, res, next) => {
 
-
+  
     if ((req.body?.email.trim().length == 0) || (req.body?.password.trim().length == 0)) {
 
         res.status(403);

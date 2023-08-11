@@ -1,9 +1,5 @@
-
-
-
-
 let showPass = document.getElementById(`showPass`)
-let signupPass = document.getElementById(`signupPass`)
+let signupPass = document.getElementById(`userPassword`)
 let hidePass = document.getElementById(`hidePass`)
 showPass.addEventListener(`click`, () => {
     signupPass.type = 'text'
@@ -37,9 +33,9 @@ darkMode.addEventListener(`click`, () => {
         })
         labels.forEach((label) => {
             //if (!label.classList.contains('bg-white')) {
-                // label.classList.remove('bg-white')
-                label.classList.toggle('bg-[#0f172a]')
-                label.classList.toggle('bg-white')
+            // label.classList.remove('bg-white')
+            label.classList.toggle('bg-[#0f172a]')
+            label.classList.toggle('bg-white')
             //}
         })
         footer.classList.toggle('text-white')
@@ -59,11 +55,40 @@ lightMode.addEventListener(`click`, () => {
         })
         labels.forEach((label) => {
             //if (label.classList.contains('bg-white')) {
-                // label.classList.add('bg-white')
-                label.classList.toggle('bg-white')
-                label.classList.toggle('bg-[#0f172a]')
+            // label.classList.add('bg-white')
+            label.classList.toggle('bg-white')
+            label.classList.toggle('bg-[#0f172a]')
             //}
         })
         footer.classList.toggle('text-white')
     }
 })
+
+const firstName = document.getElementById('firstName')
+const lastName = document.getElementById('lastName')
+const userEmail = document.getElementById('userEmail')
+const userPassword = document.getElementById('userPassword')
+// const signUp = document.getElementById('signUp')
+const submitForm = document.getElementById('submitForm')
+let createUser = (event) => {
+    event.preventDefault()
+    // try {
+    axios.post('/JWT-Auth/signup', {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: userEmail.value,
+        password: userPassword.value
+    })
+        .then((response) => {
+            console.log(response)
+            firstName.value = ""
+            lastName.value = ""
+            userEmail.value = ""
+            userPassword.value = ""
+            location.href = './SignInFiles/signin.html'
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}
+submitForm.addEventListener('submit', createUser)

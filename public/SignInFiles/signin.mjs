@@ -10,7 +10,7 @@ imgTag.src = imgSrc
 }
 
 let showPass = document.getElementById(`showPass`)
-let signupPass = document.getElementById(`signupPass`)
+let signupPass = document.getElementById(`userPassword`)
 let hidePass = document.getElementById(`hidePass`)
 showPass.addEventListener(`click`, () => {
     signupPass.type = 'text'
@@ -45,13 +45,8 @@ darkMode.addEventListener(`click`, () => {
             input.classList.toggle('bg-[#070724]')
         })
         labels.forEach((label) => {
-            //if (!label.classList.contains('bg-white')) {
-                // label.classList.remove('bg-white')
                 label.classList.toggle('bg-[#070724]')
                 label.classList.toggle('bg-white')
-                // label.classList.toggle('text-blue-600')
-                // label.classList.toggle('text-white')
-                //}
         })
         footer.classList.toggle('text-blue-600')
         footer.classList.toggle('text-white')
@@ -72,15 +67,31 @@ lightMode.addEventListener(`click`, () => {
             input.classList.toggle('bg-[#070724]')
         })
         labels.forEach((label) => {
-            //if (!label.classList.contains('bg-white')) {
-                // label.classList.remove('bg-white')
                 label.classList.toggle('bg-[#070724]')
                 label.classList.toggle('bg-white')
-                // label.classList.toggle('text-blue-600')
-                // label.classList.toggle('text-white')
-                //}
         })
         footer.classList.toggle('text-blue-600')
         footer.classList.toggle('text-white')
     }
 })
+const userEmail = document.getElementById('userEmail')
+const userPassword = document.getElementById('userPassword')
+const submitForm = document.getElementById('submitForm')
+let VerifyUser = (event) => {
+    event.preventDefault()
+    // try {
+    axios.post('/JWT-Auth/signin', {
+        email: userEmail.value,
+        password: userPassword.value
+    })
+        .then((response) => {
+            console.log(response)
+            userEmail.value = ""
+            userPassword.value = ""
+            // location.href = './SignInFiles/signin.html'
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}
+submitForm.addEventListener('submit', VerifyUser)

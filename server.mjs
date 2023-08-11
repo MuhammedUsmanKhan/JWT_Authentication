@@ -4,11 +4,13 @@ const app = express()
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 3000
 
-import AuthRouter from './JWT_AuthRoutes/auth.mjs'
+import JWTCrudRoutes from './JWT/main.mjs'
+
+// app.use()
 
 app.use(express.json())  // bodyParser
 
-app.use('/JWT-Auth', AuthRouter)
+app.use('/JWT-Auth', JWTCrudRoutes)
 
 app.use(express.static(path.join(__dirname, 'public')))
 
